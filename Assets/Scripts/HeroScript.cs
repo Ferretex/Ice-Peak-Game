@@ -10,6 +10,9 @@ public class HeroScript : MonoBehaviour
     float moveBy = 0;
 
     public float jumpForce;
+    public float jumpAccel;
+    float jumpBy = 0;
+    float jumpReal = 0;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
@@ -17,6 +20,8 @@ public class HeroScript : MonoBehaviour
     public Transform isGroundedChecker;
     public float checkGroundRadius;
     public LayerMask groundLayer;
+    public float rememberGroundedFor;
+    float lastTimeGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +43,12 @@ public class HeroScript : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         if(x == 1 ||  x == -1)
         {
-            if(Mathf.Abs(moveBy) < speed)
+            moveBy = rb.velocity.x;
+
+            if (Mathf.Abs(moveBy) < speed)
                 moveBy += x * acceleration;
+            if (Mathf.Abs(moveBy) > speed)
+               moveBy = x * Mathf.Abs(rb.velocity.x);
 
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
         } else
@@ -51,9 +60,19 @@ public class HeroScript : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        float x = Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Jump");
+        if(x == 1 && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if(jumpReal < jumpForce)
+            {
+                jumpBy += (x * jumpAccel);
+                jumpReal += jumpForce - jumpBy;
+            }
+            rb.velocity = new Vector2(rb.velocity.x, jumpReal);
+        } else
+        {
+            jumpBy = 0;
+            jumpReal = 0;
         }
     }
     void BetterJump()
@@ -77,6 +96,10 @@ public class HeroScript : MonoBehaviour
             isGrounded = true;
         } else
         {
+            if (isGrounded)
+            {
+                lastTimeGrounded = Time.time
+;            }
             isGrounded = false;
         }
     }
