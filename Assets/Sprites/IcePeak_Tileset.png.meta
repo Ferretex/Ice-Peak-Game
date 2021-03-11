@@ -1,0 +1,951 @@
+fileFormatVersion: 2
+guid: f5767673ab4c32c4596786c9ed78f885
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7630983889157370115
+    second: IcePeak_Tileset_0
+  - first:
+      213: -8647083851728158510
+    second: IcePeak_Tileset_1
+  - first:
+      213: 3897638150332370456
+    second: IcePeak_Tileset_2
+  - first:
+      213: -5569452027932073809
+    second: IcePeak_Tileset_3
+  - first:
+      213: 7642655046376380517
+    second: IcePeak_Tileset_4
+  - first:
+      213: -34887970704481633
+    second: IcePeak_Tileset_5
+  - first:
+      213: 494379589846845560
+    second: IcePeak_Tileset_6
+  - first:
+      213: 8372380556630904052
+    second: IcePeak_Tileset_7
+  - first:
+      213: -7971897569654283047
+    second: IcePeak_Tileset_8
+  - first:
+      213: 2907224078220300100
+    second: IcePeak_Tileset_9
+  - first:
+      213: -5656067843927074796
+    second: IcePeak_Tileset_10
+  - first:
+      213: 208070954922147547
+    second: IcePeak_Tileset_11
+  - first:
+      213: -5472538132227237110
+    second: IcePeak_Tileset_12
+  - first:
+      213: 1349645963969225700
+    second: IcePeak_Tileset_13
+  - first:
+      213: 3649795849174116044
+    second: IcePeak_Tileset_14
+  - first:
+      213: 5223921887525619083
+    second: IcePeak_Tileset_15
+  - first:
+      213: -5490073014691490382
+    second: IcePeak_Tileset_16
+  - first:
+      213: 6594649108151104708
+    second: IcePeak_Tileset_17
+  - first:
+      213: 8669381691143350191
+    second: IcePeak_Tileset_18
+  - first:
+      213: -3944794302975906387
+    second: IcePeak_Tileset_19
+  - first:
+      213: -5904140826589229271
+    second: IcePeak_Tileset_20
+  - first:
+      213: 4418109009565805098
+    second: IcePeak_Tileset_21
+  - first:
+      213: 6111763159431232999
+    second: IcePeak_Tileset_22
+  - first:
+      213: -8238126356669937306
+    second: IcePeak_Tileset_23
+  - first:
+      213: -1537178721927746389
+    second: IcePeak_Tileset_24
+  - first:
+      213: 8742488679133361919
+    second: IcePeak_Tileset_25
+  - first:
+      213: 4155493817541607706
+    second: IcePeak_Tileset_26
+  - first:
+      213: -6278393331342467660
+    second: IcePeak_Tileset_27
+  - first:
+      213: -2111261466464944421
+    second: IcePeak_Tileset_28
+  - first:
+      213: -4754696862013032791
+    second: IcePeak_Tileset_29
+  - first:
+      213: -2295513205963293785
+    second: IcePeak_Tileset_30
+  - first:
+      213: 2834887149008340745
+    second: IcePeak_Tileset_31
+  - first:
+      213: -4165656434780228075
+    second: IcePeak_Tileset_32
+  - first:
+      213: -853732730955879425
+    second: IcePeak_Tileset_33
+  - first:
+      213: -3484736303985640891
+    second: IcePeak_Tileset_34
+  - first:
+      213: 6268046644812323113
+    second: IcePeak_Tileset_35
+  - first:
+      213: -4501870355034605749
+    second: IcePeak_Tileset_36
+  - first:
+      213: 6720935527505564210
+    second: IcePeak_Tileset_37
+  - first:
+      213: -6698744182201166282
+    second: IcePeak_Tileset_38
+  - first:
+      213: -5312743150813764626
+    second: IcePeak_Tileset_39
+  - first:
+      213: -5198682382382019801
+    second: IcePeak_Tileset_40
+  - first:
+      213: 5337159967910561654
+    second: IcePeak_Tileset_41
+  - first:
+      213: 126137343757861245
+    second: IcePeak_Tileset_42
+  - first:
+      213: -3638081840944725021
+    second: IcePeak_Tileset_43
+  - first:
+      213: -1481095210815345786
+    second: IcePeak_Tileset_44
+  - first:
+      213: -3951089241387633469
+    second: IcePeak_Tileset_45
+  - first:
+      213: -7682485577828646186
+    second: IcePeak_Tileset_46
+  - first:
+      213: 506791916633372409
+    second: IcePeak_Tileset_47
+  - first:
+      213: 3551021430272368936
+    second: IcePeak_Tileset_48
+  - first:
+      213: -8806343095174709334
+    second: IcePeak_Tileset_49
+  - first:
+      213: -3244119534146489452
+    second: IcePeak_Tileset_50
+  - first:
+      213: 8104908033121396794
+    second: IcePeak_Tileset_51
+  - first:
+      213: -7059464352066894255
+    second: IcePeak_Tileset_52
+  - first:
+      213: -6015760373763579216
+    second: IcePeak_Tileset_53
+  - first:
+      213: 6772285394056204645
+    second: IcePeak_Tileset_54
+  - first:
+      213: 8556467401816041261
+    second: IcePeak_Tileset_55
+  - first:
+      213: 5790802095612868072
+    second: IcePeak_Tileset_56
+  - first:
+      213: -6323273846074380013
+    second: IcePeak_Tileset_57
+  - first:
+      213: 8787036386933396383
+    second: IcePeak_Tileset_58
+  - first:
+      213: -110017197637156280
+    second: IcePeak_Tileset_59
+  - first:
+      213: 5910686566712984744
+    second: IcePeak_Tileset_60
+  - first:
+      213: -1648273172219530523
+    second: IcePeak_Tileset_61
+  - first:
+      213: -4670361769274950897
+    second: IcePeak_Tileset_62
+  - first:
+      213: 5166391628097937972
+    second: IcePeak_Tileset_63
+  - first:
+      213: -2703473579112921948
+    second: IcePeak_Tileset_64
+  - first:
+      213: -7822717161056841218
+    second: IcePeak_Tileset_65
+  - first:
+      213: -9218342098644508240
+    second: IcePeak_Tileset_66
+  - first:
+      213: 3406958643229425630
+    second: IcePeak_Tileset_67
+  - first:
+      213: -5868944418751845172
+    second: IcePeak_Tileset_68
+  - first:
+      213: 131214054291920984
+    second: IcePeak_Tileset_69
+  - first:
+      213: 7474695709354011863
+    second: IcePeak_Tileset_70
+  - first:
+      213: -2633035875450702889
+    second: IcePeak_Tileset_71
+  - first:
+      213: -6887908457108297480
+    second: IcePeak_Tileset_72
+  - first:
+      213: -1611156413955741998
+    second: IcePeak_Tileset_73
+  - first:
+      213: 9185997679552720185
+    second: IcePeak_Tileset_74
+  - first:
+      213: 1064562077000102729
+    second: IcePeak_Tileset_75
+  - first:
+      213: -1009234374341566576
+    second: IcePeak_Tileset_76
+  - first:
+      213: -1456843597522367626
+    second: IcePeak_Tileset_77
+  - first:
+      213: 554314759840887258
+    second: IcePeak_Tileset_78
+  - first:
+      213: -1388695254623641439
+    second: IcePeak_Tileset_79
+  - first:
+      213: 9130138514453876026
+    second: IcePeak_Tileset_80
+  - first:
+      213: -2873885142407119127
+    second: IcePeak_Tileset_81
+  - first:
+      213: 9200712265423662823
+    second: IcePeak_Tileset_82
+  - first:
+      213: 4491136038180302976
+    second: IcePeak_Tileset_83
+  - first:
+      213: -3219601979555697551
+    second: IcePeak_Tileset_84
+  - first:
+      213: 1314590773216677869
+    second: IcePeak_Tileset_85
+  - first:
+      213: -86212070291457667
+    second: IcePeak_Tileset_86
+  - first:
+      213: 2196257144955933534
+    second: IcePeak_Tileset_87
+  - first:
+      213: 4985067204459200383
+    second: IcePeak_Tileset_88
+  - first:
+      213: 2874346489813848717
+    second: IcePeak_Tileset_89
+  - first:
+      213: -632231890835286891
+    second: IcePeak_Tileset_90
+  - first:
+      213: 5839497679127258195
+    second: IcePeak_Tileset_91
+  - first:
+      213: 8587082235404370912
+    second: IcePeak_Tileset_92
+  - first:
+      213: -4886288099787874166
+    second: IcePeak_Tileset_93
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IcePeak_Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -10, y: 16}
+        - {x: -16, y: 10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30134ff9a63b6e960800000000000000
+      internalID: 7630983889157370115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d00ab21d036ff780800000000000000
+      internalID: -8647083851728158510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 10}
+        - {x: 10, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e42954f31371630800000000000000
+      internalID: 3897638150332370456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: -16}
+        - {x: 16, y: 16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0a78983e455b2b0800000000000000
+      internalID: -5569452027932073809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: -16}
+        - {x: -16, y: 16}
+        - {x: 16, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5685c1ca54a201a60800000000000000
+      internalID: 7642655046376380517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -10, y: 16}
+        - {x: -16, y: 10}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 10}
+        - {x: 10, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92a933539d048ff0800000000000000
+      internalID: -34887970704481633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878460d1e936cd600800000000000000
+      internalID: 494379589846845560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc4f5ae1cba03470800000000000000
+      internalID: 8372380556630904052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4e4f6b5612e5190800000000000000
+      internalID: -7971897569654283047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f88c065e8885820800000000000000
+      internalID: 2907224078220300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4189739534c9181b0800000000000000
+      internalID: -5656067843927074796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdef53c5e6733e200800000000000000
+      internalID: 208070954922147547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bd0d04093ad04b0800000000000000
+      internalID: -5472538132227237110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3ecee7ad7eab210800000000000000
+      internalID: 1349645963969225700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6e7b4ccfda6a230800000000000000
+      internalID: 3649795849174116044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b854a5877491f7840800000000000000
+      internalID: 5223921887525619083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -0.000011444092, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b51b584ea75fc3b0800000000000000
+      internalID: -5490073014691490382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c471b58c66e48b50800000000000000
+      internalID: 6594649108151104708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 0, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7efda37b4df4870800000000000000
+      internalID: 8669381691143350191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: 0, y: -4}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dade22b5b764149c0800000000000000
+      internalID: -3944794302975906387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 16, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 0, y: -6}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f844f1337401ea0800000000000000
+      internalID: -5904140826589229271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a6f1e6cb6405d30800000000000000
+      internalID: 4418109009565805098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edb735463851d450800000000000000
+      internalID: 6111763159431232999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcePeak_Tileset_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669c7efd9bb4cad80800000000000000
+      internalID: -8238126356669937306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
