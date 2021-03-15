@@ -3,7 +3,10 @@ guid: d76f916e3df8e7a44b2525a7e721da62
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - lowFriction: {instanceID: 0}
+  - highFriction: {fileID: 6200000, guid: 34df67d5ff78b9b4e83ae772f04156fc, type: 2}
+  - isGroundedChecker: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

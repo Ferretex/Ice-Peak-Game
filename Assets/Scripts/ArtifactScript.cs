@@ -13,10 +13,10 @@ public class ArtifactScript : MonoBehaviour
     }
     private void Update()
     {
-        x += 0.01f;
+        x += 0.02f;
         pos = pos + Mathf.Sin(x);
 
-        transform.Translate(Vector3.up * Mathf.Sin(x) * 0.001f);
+        transform.Translate(Vector3.up * Mathf.Sin(x) * 0.002f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

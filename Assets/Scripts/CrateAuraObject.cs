@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestAuraObject : MonoBehaviour
+public class CrateAuraObject : MonoBehaviour
 {
 
     SpriteRenderer sr;
@@ -17,16 +17,25 @@ public class TestAuraObject : MonoBehaviour
     public Transform isGroundedChecker;
     public float checkGroundRadius;
 
+    Vector3 respawnPoint;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+
+        respawnPoint = rb.position;
     }
 
     void Update()
     {
         SlopeCheck();
         CheckIfGrounded();
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            rb.position = respawnPoint;
+        }
     }
 
     void SlopeCheck()
@@ -47,7 +56,7 @@ public class TestAuraObject : MonoBehaviour
             }
             else
             {
-                rb.gravityScale = 5;
+                rb.gravityScale = 2;
             }
             
             
@@ -87,7 +96,7 @@ public class TestAuraObject : MonoBehaviour
         } else
         {
             sr.color = new Color(1f, 0f, 0f, 1f);
-            rb.sharedMaterial = highFriction;
+            rb.sharedMaterial = default;
         }
     }
 }

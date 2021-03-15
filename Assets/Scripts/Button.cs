@@ -29,7 +29,7 @@ public class Button : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log("Button Push");
+        //Debug.Log("Button Push");
 
         buttonSprite.sprite = buttonDown;
 
@@ -38,7 +38,7 @@ public class Button : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("Button Un-Push");
+        //Debug.Log("Button Un-Push");
 
         buttonSprite.sprite = buttonUp;
 

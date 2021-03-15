@@ -12,7 +12,7 @@ public class RoomControl : MonoBehaviour
         {
             followCam.SetActive(true);
 
-            other.GetComponent<HeroScript>().MoveRespawnPoint();
+            //other.GetComponent<HeroScript>().MoveRespawnPoint();
         }
     }
 

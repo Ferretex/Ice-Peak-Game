@@ -8,6 +8,7 @@ TagManager:
   - Crate
   - Water
   - IceWall
+  - SafeZone
   layers:
   - Default
   - TransparentFX
