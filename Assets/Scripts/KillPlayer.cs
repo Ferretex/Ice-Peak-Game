@@ -6,7 +6,7 @@ public class KillPlayer : MonoBehaviour
 {
     [SerializeField] Transform respawnPoint;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)       //Set the player's position back to the respawn position
     {
         if (col.transform.CompareTag("Player"))
         {

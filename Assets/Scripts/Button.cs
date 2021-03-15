@@ -19,7 +19,7 @@ public class Button : MonoBehaviour
         buttonSprite = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void Update()       //Updates call function in the door script
     {
         if(isButtonDown)
             door.GetComponent<DoorControl>().OnButtonDown();

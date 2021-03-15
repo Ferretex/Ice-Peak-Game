@@ -46,7 +46,9 @@ public class WaterAuraObject : MonoBehaviour
                     frozenTm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(-0.32f, 0, 0)), frozenSurfaceTile);
                 }
                 
-            }
+            }       
+                    //Get tile position with ground checker, translate to cell positon, check if its a surface tile
+                    //If yes, change it's sprite to frozen and activate the collider for the invisible tile.
 
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == waterSurfaceTile)
             {
@@ -127,6 +129,7 @@ public class WaterAuraObject : MonoBehaviour
                     frozenTm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(-0.32f, 0, 0)), null);
                 }
             }
+                    //Same but in reverse
 
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == frozenSurfaceTile)
             {
