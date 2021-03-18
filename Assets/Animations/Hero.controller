@@ -55,14 +55,14 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-7763512995607468072
+--- !u!1102 &-7113220903756016019
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AuraRotate
+  m_Name: TestAnim 0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -75,7 +75,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 32f5a398b79b55b459581a559b58009c, type: 2}
+  m_Motion: {fileID: 7400000, guid: f77f60fb038bb15468e01cf062c4a78d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -148,16 +148,19 @@ AnimatorStateMachine:
     m_Position: {x: 530, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8572902033462994344}
-    m_Position: {x: 400, y: 20, z: 0}
+    m_Position: {x: 430, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1822153217157132086}
     m_Position: {x: 100, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8276788506534113761}
-    m_Position: {x: 200, y: 240, z: 0}
+    m_Position: {x: 210, y: 260, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -7763512995607468072}
-    m_Position: {x: 235, y: 305, z: 0}
+    m_State: {fileID: 1232191886810139442}
+    m_Position: {x: 245, y: 325, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7113220903756016019}
+    m_Position: {x: 80, y: 30, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 8776161333274335611}
@@ -288,6 +291,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: a8c85f7bf314c5d4793ba6cac867aad4, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &1232191886810139442
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TestAnim
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: f77f60fb038bb15468e01cf062c4a78d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
