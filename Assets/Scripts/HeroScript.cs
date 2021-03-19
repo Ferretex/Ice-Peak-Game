@@ -244,7 +244,7 @@ public class HeroScript : MonoBehaviour
         }
     }
 
-    void Aura() //Arura controls
+    void Aura() //Aura controls
     {
         results = new Collider2D[20];
         Physics2D.OverlapCircleNonAlloc(auraCircle.position, auraRadius, results);      //gets all colliders in aura radius
@@ -266,6 +266,8 @@ public class HeroScript : MonoBehaviour
                     case "Water": col.GetComponent<WaterAuraObject>().OnWaterEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
 
                     case "IceWall": col.GetComponent<IceWallScript>().OnIceWallEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
+
+                    case "IceSpikes": col.GetComponent<IceSpikes>().OnIceSpikesEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
                 }
 
             }
