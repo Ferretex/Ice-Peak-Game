@@ -29,6 +29,9 @@ public class HeroScript : MonoBehaviour
     public Transform isGroundCheckerRight;
     public float checkGroundRadius;
     public LayerMask groundLayer;
+    public LayerMask crateLayer;
+
+    bool onSlope = false;
 
     bool inWater = false;
     public LayerMask waterLayer;
@@ -96,9 +99,13 @@ public class HeroScript : MonoBehaviour
             
         } else if (!isGrounded)         //If jumping but not holding a direction, movement stops slower
         {
-            moveBy -= moveBy * 0.025f;
+            moveBy -= moveBy * Time.deltaTime * 10f;
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
 
+        } else if (!onSlope)
+        {
+            moveBy -= moveBy * Time.deltaTime * 10f;
+            rb.velocity = new Vector2(moveBy, rb.velocity.y);
         } else
         {
             moveBy = 0;
@@ -139,10 +146,12 @@ public class HeroScript : MonoBehaviour
         {
             //Debug.Log("SlopeDetected");
 
+            onSlope = true;
             rb.sharedMaterial = noFriction;
         } 
         else
         {
+            onSlope = false;
             rb.sharedMaterial = default;
         }
     }
@@ -189,10 +198,12 @@ public class HeroScript : MonoBehaviour
     {
         Collider2D colliderLeft = Physics2D.OverlapCircle(isGroundCheckerLeft.position, checkGroundRadius, groundLayer);        //Empty to the left and right of the player to check for ground
         Collider2D colliderRight = Physics2D.OverlapCircle(isGroundCheckerRight.position, checkGroundRadius, groundLayer);
+        Collider2D colliderLeftCrate = Physics2D.OverlapCircle(isGroundCheckerLeft.position, checkGroundRadius, crateLayer);        //Again for crates
+        Collider2D colliderRightCrate = Physics2D.OverlapCircle(isGroundCheckerRight.position, checkGroundRadius, crateLayer);
 
         //Empty object placed under the player, if the collider overlaps with a ground object it sets is grounded to 1
 
-        if (colliderLeft != null || colliderRight != null)
+        if (colliderLeft != null || colliderRight != null || colliderLeftCrate != null || colliderRightCrate != null)
         {
             isGrounded = true;
 

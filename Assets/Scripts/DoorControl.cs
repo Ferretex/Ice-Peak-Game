@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DoorControl : MonoBehaviour
 {
-
+    public float openHeight, closeHeight;
     public void OnButtonDown()
     {
-        if(transform.position.y <= 1.28)
+        if(transform.position.y <= openHeight)
         {
             transform.Translate(Vector2.up * Time.deltaTime);
         }
@@ -15,7 +15,7 @@ public class DoorControl : MonoBehaviour
 
     public void OnButtonUp()
     {
-        if (transform.position.y >= 0)
+        if (transform.position.y >= closeHeight)
         {
             transform.Translate(Vector2.down * Time.deltaTime);
         }

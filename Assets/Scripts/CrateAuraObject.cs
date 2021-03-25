@@ -32,7 +32,7 @@ public class CrateAuraObject : MonoBehaviour
         SlopeCheck();
         CheckIfGrounded();
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             rb.position = respawnPoint;
         }
