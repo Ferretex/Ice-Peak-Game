@@ -21,7 +21,7 @@ public class DialogueText : MonoBehaviour
     }
      IEnumerator Type()
    {
-        Debug.Log("Dailog Start");
+        Debug.Log("Dialog Start");
 
         TextBox.enabled = true;
 
@@ -47,7 +47,7 @@ public class DialogueText : MonoBehaviour
         Activator.enabled = false; //prevents the box from being activated twice
         TextBox.enabled = false;
 
-        Debug.Log("Dailog End");
+        Debug.Log("Dialog End");
     }
     public void OnTriggerEnter2D(Collider2D col)
     {
