@@ -7,9 +7,9 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenu, optionsMenu;
 
-    public GameObject pauseFirstButton;
+    public GameObject pauseFirstButton, optionsMenuFirstButton;
 
     public Canvas canvasScalar;
 
@@ -67,18 +67,23 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        CloseMainMenu();
+        CloseOptions();
         Time.timeScale = 1f;
         isPaused = false;
-
         
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        OpenMainMenu();
         Time.timeScale = 0f;
         isPaused = true;
+    }
+
+    public void OpenMainMenu()
+    {
+        pauseMenu.SetActive(true);
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
@@ -86,16 +91,29 @@ public class PauseMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 
-    public void LoadMenu()
+    public void OpenOptions()
     {
-        Time.timeScale = 1f;
-        isPaused = false;
-        SceneManager.LoadScene(0);
+        optionsMenu.SetActive(true);
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        EventSystem.current.SetSelectedGameObject(optionsMenuFirstButton);
     }
 
-    public void QuitGame()
+    public void CloseMainMenu()
     {
-        Debug.Log("Quit");
-        Application.Quit();
+        pauseMenu.SetActive(false);
+    }
+
+    public void CloseOptions()
+    {
+        optionsMenu.SetActive(false);
+    }
+
+    public void LoadMenu()
+    {
+        Resume();
+        SceneManager.LoadScene(0);
     }
 }
