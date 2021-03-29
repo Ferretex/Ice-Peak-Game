@@ -5,12 +5,11 @@ using UnityEngine.Tilemaps;
 
 public class IceSpikes : MonoBehaviour
 {
-    [SerializeField] Transform respawnPoint;
 
     Tilemap tm;
     GridLayout gridLayout;
 
-    public Tilemap frozenTm;
+    public Tilemap meltedTm;
 
     public TileBase frozen;
     public TileBase melted;
@@ -26,50 +25,34 @@ public class IceSpikes : MonoBehaviour
     {
         if (!auraType) //Cold
         {
-
-            //if (tm.GetTile(gridLayout.WorldToCell(groundChecker.position)) == melted)
-            //{
-            //    tm.SetTile(gridLayout.WorldToCell(groundChecker.position), frozen);
-            //}
-
-            //if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == melted)
-            //{
-            //    tm.SetTile(gridLayout.WorldToCell(headChecker.position), frozen);
-            //}
-
-            //if (tm.GetTile(gridLayout.WorldToCell(leftChecker.position)) == melted)
-            //{
-            //    tm.SetTile(gridLayout.WorldToCell(leftChecker.position), frozen);
-            //}
-
-            //if (tm.GetTile(gridLayout.WorldToCell(rightChecker.position)) == melted)
-            //{
-            //    tm.SetTile(gridLayout.WorldToCell(rightChecker.position), frozen);
-            //}
-
+            // Code in IceSpikesMelted.cs
         }
         else //Hot
         {
 
             if (tm.GetTile(gridLayout.WorldToCell(groundChecker.position)) == frozen)
             {
-                tm.SetTile(gridLayout.WorldToCell(groundChecker.position), melted);
-
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position), null);
+                meltedTm.SetTile(gridLayout.WorldToCell(groundChecker.position), melted);
             }
 
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == frozen)
             {
-                tm.SetTile(gridLayout.WorldToCell(headChecker.position), melted); 
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position), null);
+                meltedTm.SetTile(gridLayout.WorldToCell(headChecker.position), melted);
             }
 
             if (tm.GetTile(gridLayout.WorldToCell(leftChecker.position)) == frozen)
             {
-                tm.SetTile(gridLayout.WorldToCell(leftChecker.position), melted);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position), null);
+                meltedTm.SetTile(gridLayout.WorldToCell(leftChecker.position), melted);
             }
 
             if (tm.GetTile(gridLayout.WorldToCell(rightChecker.position)) == frozen)
             {
-                tm.SetTile(gridLayout.WorldToCell(rightChecker.position), melted);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position), null);
+                meltedTm.SetTile(gridLayout.WorldToCell(rightChecker.position), melted);
+                
             }
 
         }
@@ -77,13 +60,5 @@ public class IceSpikes : MonoBehaviour
         //Debug.Log((gridLayout.WorldToCell(groundChecker.position)));
     }
 
-    //private void OnTriggerEnter2D(Collider2D col)       //Set the player's position back to the respawn position
-    //{
-    //    if (col.transform.CompareTag("Player"))
-    //    {
-    //        col.transform.position = respawnPoint.position;
-    //    }
-
-    //}
 
 }

@@ -149,6 +149,11 @@ public class HeroScript : MonoBehaviour
             onSlope = true;
             rb.sharedMaterial = noFriction;
         } 
+        else if(hitBottomLeft.collider == null && hitTopLeft.collider == null && hitTopRight.collider == null && hitBottomRight.collider == null)
+        {
+            onSlope = false;
+            rb.sharedMaterial = noFriction;
+        }
         else
         {
             onSlope = false;
@@ -279,6 +284,8 @@ public class HeroScript : MonoBehaviour
                     case "IceWall": col.GetComponent<IceWallScript>().OnIceWallEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
 
                     case "IceSpikes": col.GetComponent<IceSpikes>().OnIceSpikesEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
+
+                    case "IceSpikesMelted": col.GetComponent<IceSpikeMelted>().OnIceSpikesMeltedEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
                 }
 
             }

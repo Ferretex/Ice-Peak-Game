@@ -31,18 +31,18 @@ public class MainMenu : MonoBehaviour
         {
             canvasScalar.scaleFactor = 0.5f;
         }
-        else if(res.x > 704 && res.x < 1056)
+        else if(res.x >= 704 && res.x < 1056)
         {
             canvasScalar.scaleFactor = 1f;
         }
-        else if (res.x > 1056 && res.x < 1408)
+        else if (res.x >= 1056 && res.x < 1408)
         {
             canvasScalar.scaleFactor = 1.5f;
         }
-        else if (res.x > 1408 && res.x < 1760)
+        else if (res.x >= 1408 && res.x < 1760)
         {
             canvasScalar.scaleFactor = 2f;
-        }else if (res.x > 1760 && res.x < 2112)
+        }else if (res.x >= 1760 && res.x < 2112)
         {
             canvasScalar.scaleFactor = 2.5f;
         }
