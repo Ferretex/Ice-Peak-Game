@@ -15,6 +15,12 @@ public class PauseMenu : MonoBehaviour
 
     private Vector2 res;
 
+    [SerializeField] Transform respawnPoint;
+
+    [SerializeField] GameObject player;
+
+    public Transform[] crates;
+
     void Start()
     {
         res = new Vector2(Screen.width, Screen.height);
@@ -115,5 +121,17 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         SceneManager.LoadScene(0);
+    }
+
+    public void ResetLevel()
+    {
+        player.transform.position = respawnPoint.position;
+        
+        foreach(Transform pos in crates)
+        {
+            pos.GetComponent<CrateAuraObject>().ResetCrate();
+        }
+
+        Resume();
     }
 }

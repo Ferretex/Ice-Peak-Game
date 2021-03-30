@@ -34,7 +34,7 @@ public class CrateAuraObject : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            rb.position = respawnPoint;
+            ResetCrate();
         }
     }
 
@@ -88,7 +88,7 @@ public class CrateAuraObject : MonoBehaviour
 
     public void OnCrateEnterAura(bool auraType)
     {
-
+        /*
         if (!auraType)
         {
             sr.color = new Color(0f, 1f, 1f, 1f);
@@ -98,5 +98,11 @@ public class CrateAuraObject : MonoBehaviour
             sr.color = new Color(1f, 0f, 0f, 1f);
             rb.sharedMaterial = default;
         }
+        */
+    }
+
+    public void ResetCrate()
+    {
+        rb.position = respawnPoint;
     }
 }
