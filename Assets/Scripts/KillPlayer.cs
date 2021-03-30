@@ -9,7 +9,7 @@ public class KillPlayer : MonoBehaviour
     IEnumerator Respawn(Collider2D col)
     {
         Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.25f);
         Time.timeScale = 1;
 
         col.transform.position = respawnPoint.position;
