@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: -2110545113837994700
     second: Damage_Objects_Tileset_3
+  - first:
+      213: 8397288733111359004
+    second: Damage_Objects_Tileset_4
+  - first:
+      213: 9006480883107558536
+    second: Damage_Objects_Tileset_5
+  - first:
+      213: 3570309375536771885
+    second: Damage_Objects_Tileset_6
+  - first:
+      213: -4564246529094162185
+    second: Damage_Objects_Tileset_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,7 +119,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -133,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -159,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -183,7 +195,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -198,6 +210,106 @@ TextureImporter:
       bones: []
       spriteID: 43dff3fa666d5b2e0800000000000000
       internalID: -2110545113837994700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Objects_Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: -2, y: -7}
+        - {x: -16, y: 1}
+        - {x: -2, y: 9}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c161e7dac99298470800000000000000
+      internalID: 8397288733111359004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Objects_Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: 7}
+        - {x: 16, y: -1}
+        - {x: 2, y: -9}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884f8f115a27dfc70800000000000000
+      internalID: 9006480883107558536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Objects_Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 12}
+        - {x: -16, y: -10}
+        - {x: 6, y: 1}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23bd13f5794c8130800000000000000
+      internalID: 3570309375536771885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Objects_Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: -1}
+        - {x: 16, y: -12}
+        - {x: 16, y: 10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f86806d6f988a0c0800000000000000
+      internalID: -4564246529094162185
       vertices: []
       indices: 
       edges: []
