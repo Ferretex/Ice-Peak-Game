@@ -52,7 +52,7 @@ public class HeroScript : MonoBehaviour
 
     public Animator animator;
 
-    bool hasArtifact = false;       //Before the player gets the artifact
+    static bool hasArtifact = false;       //Before the player gets the artifact
 
     // Start is called before the first frame update
     void Start()

@@ -20446,7 +20446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 75.00104}
+  m_AnchoredPosition: {x: 0, y: 75.00195}
   m_SizeDelta: {x: -249.62, y: -500.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321472199
@@ -20695,7 +20695,7 @@ BuoyancyEffector2D:
     serializedVersion: 2
     m_Bits: 183
   m_SurfaceLevel: 0.23
-  m_Density: 5
+  m_Density: 0
   m_LinearDrag: 100
   m_AngularDrag: 5
   m_FlowAngle: 0
@@ -44443,7 +44443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 117.99895}
+  m_AnchoredPosition: {x: 0, y: 117.99805}
   m_SizeDelta: {x: -249.09, y: -451.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945321228

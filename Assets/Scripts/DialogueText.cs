@@ -10,7 +10,7 @@ public class DialogueText : MonoBehaviour
     private int index;
     public float speed;
 
-    public BoxCollider2D Activator;
+    public Collider2D Activator;
     public Image TextBox;
     void Start()
     {
