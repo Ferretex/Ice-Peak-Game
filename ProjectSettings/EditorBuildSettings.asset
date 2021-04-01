@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Beta/Level 1.unity
     guid: 95e7f3ac14b65234ea59358c40240606
   - enabled: 1
+    path: Assets/Scenes/Beta/Level 2.unity
+    guid: b086bc4f5764c7c4ab007e3871536dc2
+  - enabled: 0
     path: Assets/Scenes/Lexi Scene(upstream).unity
     guid: c912026fbf803a74b8919bf8a7dbdff2
   - enabled: 0

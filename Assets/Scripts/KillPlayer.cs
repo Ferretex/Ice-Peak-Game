@@ -12,6 +12,7 @@ public class KillPlayer : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.25f);
         Time.timeScale = 1;
 
+        col.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         col.transform.position = respawnPoint.position;
     }
     private void OnTriggerEnter2D(Collider2D col)       //Set the player's position back to the respawn position
