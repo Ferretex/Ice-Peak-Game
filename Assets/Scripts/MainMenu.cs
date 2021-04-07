@@ -7,9 +7,9 @@ using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
 
-    public GameObject mainMenu, galleryTemp, optionsMenu;
+    public GameObject mainMenu, galleryMenu, optionsMenu, levelSelectMenu;
 
-    public GameObject mainMenuFirstButton, galleryTempFirstButton, optionsMenuFirstButton;
+    public GameObject mainMenuFirstButton, galleryMenuFirstButton, optionsMenuFirstButton, levelSelectMenuFirstButton;
 
     public Canvas canvasScalar;
 
@@ -58,9 +58,29 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void PlayGame()
+    public void LoadLevel1()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+    }
+
+    public void LoadLevel4()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+    }
+
+    public void LoadLevel5()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
     }
 
     public void QuitGame ()
@@ -99,19 +119,34 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(false);
     }
 
-    public void OpenGalleryTemp()
+    public void OpenGallery()
     {
-        galleryTemp.SetActive(true);
+        galleryMenu.SetActive(true);
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
         //set a new selected game object
-        EventSystem.current.SetSelectedGameObject(galleryTempFirstButton);
+        EventSystem.current.SetSelectedGameObject(galleryMenuFirstButton);
     }
 
-    public void CloseGalleryTemp()
+    public void CloseGallery()
     {
-        galleryTemp.SetActive(false);
+        galleryMenu.SetActive(false);
+    }
+
+    public void OpenLevelSelect()
+    {
+        levelSelectMenu.SetActive(true);
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        EventSystem.current.SetSelectedGameObject(levelSelectMenuFirstButton);
+    }
+
+    public void CloseLevelSelect()
+    {
+        levelSelectMenu.SetActive(false);
     }
 
 }

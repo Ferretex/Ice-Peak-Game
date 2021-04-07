@@ -12,6 +12,7 @@ TagManager:
   - WarpZone
   - IceSpikes
   - IceSpikesMelted
+  - IceCystal
   layers:
   - Default
   - TransparentFX
