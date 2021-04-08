@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CrateAuraObject : MonoBehaviour
 {
+    public AudioClip waterDrop;   //crate drop in water clip
 
     SpriteRenderer sr;
 
@@ -78,13 +79,39 @@ public class CrateAuraObject : MonoBehaviour
         if (collider != null)
         {
             isGrounded = true;
-
         }
         else
         {
             isGrounded = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)  //crate drop sfx
+    {
+        if (collision.gameObject.tag == "ground")    //crate collide with ground sfx
+        {
+            //audio: crate drop
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.pitch = Random.Range(0.5f, 1.5f);
+            if (!audioSource.isPlaying && collision.relativeVelocity.magnitude > 1)
+            {
+                float randomVolume = Random.Range(0.4f, 0.8f);
+                audioSource.PlayOneShot(audioSource.clip, randomVolume);
+            }
+        }
+        else if(collision.gameObject.tag == "Water")   //crate collide with water
+        {
+            //audio: crate drop in water
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.pitch = Random.Range(0.5f, 1.5f);
+            if (!audioSource.isPlaying && collision.relativeVelocity.magnitude > 0.5f)
+            {
+                float randomVolume = Random.Range(0.5f, 1.5f);
+                audioSource.PlayOneShot(waterDrop, randomVolume);
+            }
+        }
+    }
+
 
     public void OnCrateEnterAura(bool auraType)
     {

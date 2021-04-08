@@ -21,7 +21,8 @@ public class Button : MonoBehaviour
 
     void Update()       //Updates call function in the door script
     {
-        if(isButtonDown)
+        if (isButtonDown)
+
             door.GetComponent<DoorControl>().OnButtonDown();
         else
             door.GetComponent<DoorControl>().OnButtonUp();
@@ -36,6 +37,17 @@ public class Button : MonoBehaviour
         isButtonDown = true;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)   //button press sfx
+    {
+        //audio for button press
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = Random.Range(0.5f, 1.5f);
+
+        float randomVolume = Random.Range(0.0f, 0.5f);
+        audioSource.PlayOneShot(audioSource.clip, randomVolume);
+
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Debug.Log("Button Un-Push");
@@ -44,4 +56,5 @@ public class Button : MonoBehaviour
 
         isButtonDown = false;
     }
+
 }

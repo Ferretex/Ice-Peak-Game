@@ -192,4 +192,12 @@ public class WaterAuraObject : MonoBehaviour
         //Debug.Log((gridLayout.WorldToCell(groundChecker.position)));
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)   //player drop in water sfx
+    {     
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = Random.Range(0.5f, 1.5f);
+
+        if(!audioSource.isPlaying)
+        audioSource.PlayOneShot(audioSource.clip, 1f);
+    }
 }

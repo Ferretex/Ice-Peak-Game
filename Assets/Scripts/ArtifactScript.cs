@@ -24,6 +24,13 @@ public class ArtifactScript : MonoBehaviour
         {
             collision.GetComponent<HeroScript>().GetArtifact();
             GetComponent<SpriteRenderer>().sprite = null;
+            GetComponent<BoxCollider2D>().enabled= false;
+
+            AudioSource audioSource = GetComponent<AudioSource>();  //player takes artifact sfx
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(audioSource.clip);
+            }
         }
         
     }

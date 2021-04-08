@@ -54,6 +54,8 @@ public class HeroScript : MonoBehaviour
 
     static bool hasArtifact = false;       //Before the player gets the artifact
 
+    public AudioClip heroJump, auraH, auraC; //player audio clips - heroWalk clip is in AudiSource
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,10 +87,9 @@ public class HeroScript : MonoBehaviour
     void Move()         //Basic Movement
     {
         float x = Input.GetAxisRaw("Horizontal");       //Checks for WASD and Arrow key inputs
-        if(x == 1 ||  x == -1)
+        if (x == 1 || x == -1)
         {
             moveBy = rb.velocity.x;
-
 
             if (Mathf.Abs(moveBy) < speed)              //Acceleration for normal movement
                 moveBy += x * acceleration;
@@ -96,17 +97,27 @@ public class HeroScript : MonoBehaviour
                 moveBy = x * Mathf.Abs(rb.velocity.x);
 
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
-            
-        } else if (!isGrounded)         //If jumping but not holding a direction, movement stops slower
-        {
-            moveBy -= moveBy * Time.deltaTime * 10f;
-            rb.velocity = new Vector2(moveBy, rb.velocity.y);
 
-        } else if (!onSlope)
+            AudioSource audioSource = GetComponent<AudioSource>();   //footsteps sfx
+            if (!audioSource.isPlaying)
+            {
+                audioSource.pitch = Random.Range(0.8f, 1f);
+                float randomVolume = Random.Range(0.8f, 1f);
+
+                audioSource.PlayOneShot(audioSource.clip, randomVolume);
+            }
+        }
+        else if (!isGrounded)         //If jumping but not holding a direction, movement stops slower
         {
             moveBy -= moveBy * Time.deltaTime * 10f;
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
-        } else
+        }
+        else if (!onSlope)
+        {
+            moveBy -= moveBy * Time.deltaTime * 10f;
+            rb.velocity = new Vector2(moveBy, rb.velocity.y);
+        }
+        else
         {
             moveBy = 0;
         }
@@ -116,6 +127,7 @@ public class HeroScript : MonoBehaviour
         if(moveBy > 0 && !facingRight)  //Turn the character around
         {
             Flip();
+
         } else if(moveBy < 0 && facingRight)
         {
             Flip();
@@ -168,7 +180,11 @@ public class HeroScript : MonoBehaviour
         {
             isJumping = true;       //sets isJumping to true
 
-            if(jumpTimeCounter > 0)     //unitll the counter gets to zero, isJumping is true and the player can hold to determine the height of the jump
+            AudioSource audioSource = GetComponent<AudioSource>();  //jump sfx
+            if (!audioSource.isPlaying)
+            audioSource.PlayOneShot(heroJump, 0.6f);
+
+            if (jumpTimeCounter > 0)     //unitll the counter gets to zero, isJumping is true and the player can hold to determine the height of the jump
             { 
                 jumpTimeCounter -= Time.deltaTime;
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -214,8 +230,8 @@ public class HeroScript : MonoBehaviour
 
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", false);
-
-        } else
+        }
+        else
         {
             isGrounded = false;
         }
@@ -232,6 +248,7 @@ public class HeroScript : MonoBehaviour
         {
             //Debug.Log("InTheWater");
             inWater = true;
+
         } else
         {
             inWater = false;
@@ -246,13 +263,23 @@ public class HeroScript : MonoBehaviour
             auraToggle = false;
 
             auraVisual.color = new Color(0f, 1f, 1f, 0.5f);
+
+            AudioSource audioSource = GetComponent<AudioSource>();  //cold aura sfx
+            //if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(auraC, 0.5f);
+
         } else if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Z))
         {
             auraActivated = true;
             auraToggle = true;
 
             auraVisual.color = new Color(1f, 0.25f, 0f, 0.5f);
-        } else if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.R))
+
+            AudioSource audioSource = GetComponent<AudioSource>();  //hot aura sfx
+            //if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(auraH, 0.5f);
+
+            } else if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.R))
         {
             auraActivated = false;
 
