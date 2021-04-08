@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
+
     public GameObject pauseMenu, optionsMenu;
 
     public GameObject pauseFirstButton, optionsMenuFirstButton;
@@ -77,7 +78,7 @@ public class PauseMenu : MonoBehaviour
         CloseOptions();
         Time.timeScale = 1f;
         isPaused = false;
-        
+        player.GetComponent<HeroScript>().PausePlayer(false);
     }
 
     void Pause()
@@ -85,6 +86,7 @@ public class PauseMenu : MonoBehaviour
         OpenMainMenu();
         Time.timeScale = 0f;
         isPaused = true;
+        player.GetComponent<HeroScript>().PausePlayer(true);
     }
 
     public void OpenMainMenu()
@@ -133,5 +135,10 @@ public class PauseMenu : MonoBehaviour
         }
 
         Resume();
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
     }
 }

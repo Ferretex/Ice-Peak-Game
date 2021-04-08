@@ -95,7 +95,7 @@ public class CrateAuraObject : MonoBehaviour
             audioSource.pitch = Random.Range(0.5f, 1.5f);
             if (!audioSource.isPlaying && collision.relativeVelocity.magnitude > 1)
             {
-                float randomVolume = Random.Range(0.4f, 0.8f);
+                float randomVolume = Random.Range(1.5f, 2f);
                 audioSource.PlayOneShot(audioSource.clip, randomVolume);
             }
         }
@@ -106,7 +106,7 @@ public class CrateAuraObject : MonoBehaviour
             audioSource.pitch = Random.Range(0.5f, 1.5f);
             if (!audioSource.isPlaying && collision.relativeVelocity.magnitude > 0.5f)
             {
-                float randomVolume = Random.Range(0.5f, 1.5f);
+                float randomVolume = Random.Range(2f, 2.5f);
                 audioSource.PlayOneShot(waterDrop, randomVolume);
             }
         }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DialogueText : MonoBehaviour
 {
+    public GameObject hero, pauseMenu;
+
     public TMPro.TextMeshProUGUI Text;
     public string[] Sections;
     private int index;
@@ -12,6 +14,8 @@ public class DialogueText : MonoBehaviour
 
     public Collider2D Activator;
     public Image TextBox;
+
+    bool isPaused = false;
     void Start()
     {
         index = 0;
@@ -19,6 +23,8 @@ public class DialogueText : MonoBehaviour
     }
     void Update()
     {
+
+
     }
      IEnumerator Type()
    {
@@ -26,12 +32,28 @@ public class DialogueText : MonoBehaviour
 
         TextBox.enabled = true;
 
-        Time.timeScale = 0;
+        hero.GetComponent<HeroScript>().DialogPause(true);
 
         foreach (string line in Sections)
         {
+            
             foreach (char letter in Sections[index].ToCharArray())
             {
+                isPaused = pauseMenu.GetComponent<PauseMenu>().IsPaused();
+
+                if (isPaused == true)
+                {
+                    TextBox.enabled = false;
+                    Text.enabled = false;
+                    while(isPaused == true)
+                    {
+                        isPaused = pauseMenu.GetComponent<PauseMenu>().IsPaused();
+                        yield return null;
+                    }
+                    TextBox.enabled = true;
+                    Text.enabled = true;
+                }
+
                 Text.text += letter;//display text
 
                 yield return new WaitForSecondsRealtime(speed);//text speed
@@ -43,7 +65,7 @@ public class DialogueText : MonoBehaviour
             Text.text = "";
             index++;
         }
-        Time.timeScale = 1;
+        hero.GetComponent<HeroScript>().DialogPause(false);
 
         Activator.enabled = false; //prevents the box from being activated twice
         TextBox.enabled = false;
@@ -55,7 +77,6 @@ public class DialogueText : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             
-
             StartCoroutine(Type());
 
         }

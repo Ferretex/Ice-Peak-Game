@@ -30,69 +30,118 @@ public class IceCrystalScript : MonoBehaviour
             if (tm.GetTile(gridLayout.WorldToCell(groundChecker.position)) == frozenBL)
             {
                 tm.SetTile(gridLayout.WorldToCell(groundChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0.32f, 0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == frozenBL)
             {
                 tm.SetTile(gridLayout.WorldToCell(headChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0.32f, 0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(leftChecker.position)) == frozenBL)
             {
                 tm.SetTile(gridLayout.WorldToCell(leftChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0.32f, 0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(rightChecker.position)) == frozenBL)
             {
                 tm.SetTile(gridLayout.WorldToCell(rightChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0.32f, 0.32f, 0)), null);
             }
 
             if (tm.GetTile(gridLayout.WorldToCell(groundChecker.position)) == frozenBR)
             {
                 tm.SetTile(gridLayout.WorldToCell(groundChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(-0.32f, 0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == frozenBR)
             {
                 tm.SetTile(gridLayout.WorldToCell(headChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(-0.32f, 0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(leftChecker.position)) == frozenBR)
             {
                 tm.SetTile(gridLayout.WorldToCell(leftChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(-0.32f, 0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(rightChecker.position)) == frozenBR)
             {
                 tm.SetTile(gridLayout.WorldToCell(rightChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0f, 0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(-0.32f, 0.32f, 0)), null);
             }
 
             if (tm.GetTile(gridLayout.WorldToCell(groundChecker.position)) == frozenTL)
             {
                 tm.SetTile(gridLayout.WorldToCell(groundChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0.32f, -0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == frozenTL)
             {
                 tm.SetTile(gridLayout.WorldToCell(headChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0.32f, -0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(leftChecker.position)) == frozenTL)
             {
                 tm.SetTile(gridLayout.WorldToCell(leftChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0.32f, -0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(rightChecker.position)) == frozenTL)
             {
                 tm.SetTile(gridLayout.WorldToCell(rightChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0.32f, -0.32f, 0)), null);
             }
 
             if (tm.GetTile(gridLayout.WorldToCell(groundChecker.position)) == frozenTR)
             {
                 tm.SetTile(gridLayout.WorldToCell(groundChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(groundChecker.position + new Vector3(-0.32f, -0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(headChecker.position)) == frozenTR)
             {
                 tm.SetTile(gridLayout.WorldToCell(headChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(headChecker.position + new Vector3(-0.32f, -0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(leftChecker.position)) == frozenTR)
             {
                 tm.SetTile(gridLayout.WorldToCell(leftChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(leftChecker.position + new Vector3(-0.32f, -0.32f, 0)), null);
             }
             if (tm.GetTile(gridLayout.WorldToCell(rightChecker.position)) == frozenTR)
             {
                 tm.SetTile(gridLayout.WorldToCell(rightChecker.position), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(0f, -0.32f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(-0.32f, 0f, 0)), null);
+                tm.SetTile(gridLayout.WorldToCell(rightChecker.position + new Vector3(-0.32f, -0.32f, 0)), null);
             }
         }
 

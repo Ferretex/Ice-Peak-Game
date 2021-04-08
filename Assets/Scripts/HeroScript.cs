@@ -17,7 +17,7 @@ public class HeroScript : MonoBehaviour
     float moveBy = 0;
     private bool facingRight = true;
 
-    public float jumpPower;         //Jump Variables
+    public float jumpPower, fallSpeed;         //Jump Variables
     bool isJumping = false;
     public float jumpTime;
     float jumpTimeCounter;
@@ -56,32 +56,40 @@ public class HeroScript : MonoBehaviour
 
     public AudioClip heroJump, auraH, auraC; //player audio clips - heroWalk clip is in AudiSource
 
+    public AudioSource audioSource, audioSourceWalking;
+
+    bool isJumpHeld = false, jumpSoundPlayed = false;
+
+    bool isPaused = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();       //Get the rigid body  and collider component
         cl = GetComponent<BoxCollider2D>();
-
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        Move();                                 //Call all functions from the update function
-        SlopeCheck();
+        if(isPaused == false)
+        {
+            Move();                                 //Call all functions from the update function
+            SlopeCheck();
 
-        Jump();
-        BetterJump();
+            Jump();
+            BetterJump();
 
-        CheckIfGrounded();
-        CheckIfWater();
+            CheckIfGrounded();
+            CheckIfWater();
 
-        if(hasArtifact)
-            activateAura();
+            if (hasArtifact)
+                activateAura();
 
-        if(auraActivated)
-            Aura();
+            if (auraActivated)
+                Aura();
+        }
     }
 
     void Move()         //Basic Movement
@@ -98,13 +106,12 @@ public class HeroScript : MonoBehaviour
 
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
 
-            AudioSource audioSource = GetComponent<AudioSource>();   //footsteps sfx
-            if (!audioSource.isPlaying)
+            if (!audioSourceWalking.isPlaying && isGrounded)
             {
-                audioSource.pitch = Random.Range(0.8f, 1f);
-                float randomVolume = Random.Range(0.8f, 1f);
+                audioSourceWalking.pitch = Random.Range(2f, 2.5f);
+                float randomVolume = Random.Range(1.5f, 2f);
 
-                audioSource.PlayOneShot(audioSource.clip, randomVolume);
+                audioSourceWalking.PlayOneShot(audioSourceWalking.clip, randomVolume);
             }
         }
         else if (!isGrounded)         //If jumping but not holding a direction, movement stops slower
@@ -153,14 +160,18 @@ public class HeroScript : MonoBehaviour
 
         //Debug.Log("is groudned: " + isGrounded);
 
-        if ((hitBottomLeft.collider != null && Mathf.Abs(hitBottomLeft.normal.x) > 0.1f) || (hitBottomRight.collider != null && Mathf.Abs(hitBottomRight.normal.x ) > 0.1f)  ||
-            (hitTopLeft.collider != null && Mathf.Abs(hitTopLeft.normal.x) > 0.1f) || (hitTopRight.collider != null && Mathf.Abs(hitTopRight.normal.x) > 0.1f) && !inWater)  //If it his a collider and not in water
+        if ((hitBottomLeft.collider != null && Mathf.Abs(hitBottomLeft.normal.x) > 0.1f) || (hitBottomRight.collider != null && Mathf.Abs(hitBottomRight.normal.x ) > 0.1f) && !inWater)  //If it his a collider and not in water
         {
             //Debug.Log("SlopeDetected");
 
             onSlope = true;
             rb.sharedMaterial = noFriction;
         } 
+        else if ((hitTopLeft.collider != null && Mathf.Abs(hitTopLeft.normal.x) > 0.1f) || (hitTopRight.collider != null && Mathf.Abs(hitTopRight.normal.x) > 0.1f) && !inWater)
+        {
+            onSlope = false;
+            rb.sharedMaterial = noFriction;
+        }
         else if(hitBottomLeft.collider == null && hitTopLeft.collider == null && hitTopRight.collider == null && hitBottomRight.collider == null)
         {
             onSlope = false;
@@ -176,13 +187,20 @@ public class HeroScript : MonoBehaviour
     void Jump()         //Basic Jump
     {
         float x = Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Jump");      //Checks for WASD, aroow Keys or space bar inputs
-        if(x == 1 && (isGrounded || isJumping || inWater))   //if input and the player is grounded, is juming or is in water
+        if(x == 1 && (isGrounded || isJumping || inWater)  && !isJumpHeld)   //if input and the player is grounded, is juming or is in water
         {
             isJumping = true;       //sets isJumping to true
+            
 
-            AudioSource audioSource = GetComponent<AudioSource>();  //jump sfx
-            if (!audioSource.isPlaying)
-            audioSource.PlayOneShot(heroJump, 0.6f);
+
+              //jump sfx
+            //if (!audioSource.isPlaying)
+            if(jumpSoundPlayed == false)
+            {
+                audioSource.PlayOneShot(heroJump, 1.25f);
+                jumpSoundPlayed = true;
+            }
+                
 
             if (jumpTimeCounter > 0)     //unitll the counter gets to zero, isJumping is true and the player can hold to determine the height of the jump
             { 
@@ -191,11 +209,19 @@ public class HeroScript : MonoBehaviour
             } else
             {
                 isJumping = false;
+                isJumpHeld = true;
+                jumpSoundPlayed = false;
             }
         } else
         {
             isJumping = false;
             jumpTimeCounter = jumpTime;     //Resets jump counter
+            jumpSoundPlayed = false;
+        }
+
+        if(x == 0)
+        {
+            isJumpHeld = false;
         }
     }
 
@@ -206,6 +232,12 @@ public class HeroScript : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;      //Faster falling speed
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", true);
+
+            if(rb.velocity.y <= fallSpeed)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, fallSpeed);
+            }
+
         }
         else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space) || !Input.GetKeyDown(KeyCode.W) || !Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -259,25 +291,35 @@ public class HeroScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.X))
         {
+            //if (!audioSource.isPlaying)
+
+            if (auraActivated == false || auraToggle != false)
+            {
+                audioSource.PlayOneShot(auraC, 1f);
+            }
+
             auraActivated = true;
             auraToggle = false;
 
             auraVisual.color = new Color(0f, 1f, 1f, 0.5f);
 
-            AudioSource audioSource = GetComponent<AudioSource>();  //cold aura sfx
-            //if (!audioSource.isPlaying)
-                audioSource.PlayOneShot(auraC, 0.5f);
+            
+                
 
         } else if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Z))
         {
+                                                                    //if (!audioSource.isPlaying)
+            if (auraActivated == false || auraToggle != true)
+            {
+                audioSource.PlayOneShot(auraH, 1f);
+            }
+
             auraActivated = true;
             auraToggle = true;
 
             auraVisual.color = new Color(1f, 0.25f, 0f, 0.5f);
 
-            AudioSource audioSource = GetComponent<AudioSource>();  //hot aura sfx
-            //if (!audioSource.isPlaying)
-                audioSource.PlayOneShot(auraH, 0.5f);
+
 
             } else if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.R))
         {
@@ -313,6 +355,8 @@ public class HeroScript : MonoBehaviour
                     case "IceSpikes": col.GetComponent<IceSpikes>().OnIceSpikesEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
 
                     case "IceSpikesMelted": col.GetComponent<IceSpikeMelted>().OnIceSpikesMeltedEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
+
+                    case "IceCrystal": col.GetComponent<IceCrystalScript>().OnIceCrystalEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
                 }
 
             }
@@ -328,6 +372,21 @@ public class HeroScript : MonoBehaviour
     public void GetArtifact()       // First time collecting aritfact
     {
         hasArtifact = true;
+    }
+
+    public void PausePlayer(bool toPause)
+    {
+        isPaused = toPause;
+    }
+
+    public void DialogPause(bool toPause)
+    {
+        animator.SetBool("JumpUp", false);
+        animator.SetBool("JumpDown", false);
+        animator.SetFloat("Speed", 0.0f);
+
+
+        isPaused = toPause;
     }
 }
 

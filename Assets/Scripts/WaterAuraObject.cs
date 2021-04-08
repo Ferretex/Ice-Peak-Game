@@ -198,6 +198,6 @@ public class WaterAuraObject : MonoBehaviour
         audioSource.pitch = Random.Range(0.5f, 1.5f);
 
         if(!audioSource.isPlaying)
-        audioSource.PlayOneShot(audioSource.clip, 1f);
+        audioSource.PlayOneShot(audioSource.clip, 5f);
     }
 }

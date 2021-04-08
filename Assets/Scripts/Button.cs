@@ -43,7 +43,7 @@ public class Button : MonoBehaviour
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.pitch = Random.Range(0.5f, 1.5f);
 
-        float randomVolume = Random.Range(0.0f, 0.5f);
+        float randomVolume = Random.Range(0.5f, 1f);
         audioSource.PlayOneShot(audioSource.clip, randomVolume);
 
     }

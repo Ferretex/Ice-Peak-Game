@@ -8,9 +8,9 @@ public class PhotoObject : MonoBehaviour
 
     public GameObject galleryStorage;
 
-    public Collider2D Activator;
+    public Collider2D ActivatorCol;
 
-    
+    public SpriteRenderer ActivatorSprite;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -18,7 +18,8 @@ public class PhotoObject : MonoBehaviour
         {
             galleryStorage.GetComponent<GalleryStorage>().UnlockPhoto(photoNum);
 
-            Activator.enabled = false;
+            ActivatorCol.enabled = false;
+            ActivatorSprite.enabled = false;
         }
     }
 }
