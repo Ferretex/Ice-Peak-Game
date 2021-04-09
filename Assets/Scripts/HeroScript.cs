@@ -28,6 +28,8 @@ public class HeroScript : MonoBehaviour
     public Transform isGroundCheckerLeft;
     public Transform isGroundCheckerRight;
     public float checkGroundRadius;
+    public float remberGroundedFor;
+    float groundedTime;
     public LayerMask groundLayer;
     public LayerMask crateLayer;
 
@@ -89,6 +91,11 @@ public class HeroScript : MonoBehaviour
 
             if (auraActivated)
                 Aura();
+        }
+
+        if(Application.loadedLevelName != "Level 1")
+        {
+            hasArtifact = true;
         }
     }
 
@@ -187,11 +194,9 @@ public class HeroScript : MonoBehaviour
     void Jump()         //Basic Jump
     {
         float x = Input.GetAxisRaw("Vertical") + Input.GetAxisRaw("Jump");      //Checks for WASD, aroow Keys or space bar inputs
-        if(x == 1 && (isGrounded || isJumping || inWater)  && !isJumpHeld)   //if input and the player is grounded, is juming or is in water
+        if(x == 1 && ((isGrounded || groundedTime < remberGroundedFor) || isJumping || inWater)  && !isJumpHeld)   //if input and the player is grounded, is juming or is in water
         {
             isJumping = true;       //sets isJumping to true
-            
-
 
               //jump sfx
             //if (!audioSource.isPlaying)
@@ -200,7 +205,9 @@ public class HeroScript : MonoBehaviour
                 audioSource.PlayOneShot(heroJump, 1.25f);
                 jumpSoundPlayed = true;
             }
-                
+
+            
+            //Debug.Log("Grounded Time: " + groundedTime);
 
             if (jumpTimeCounter > 0)     //unitll the counter gets to zero, isJumping is true and the player can hold to determine the height of the jump
             { 
@@ -217,6 +224,7 @@ public class HeroScript : MonoBehaviour
             isJumping = false;
             jumpTimeCounter = jumpTime;     //Resets jump counter
             jumpSoundPlayed = false;
+            
         }
 
         if(x == 0)
@@ -259,12 +267,14 @@ public class HeroScript : MonoBehaviour
         if (colliderLeft != null || colliderRight != null || colliderLeftCrate != null || colliderRightCrate != null)
         {
             isGrounded = true;
+            groundedTime = 0;
 
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", false);
         }
         else
         {
+            groundedTime += Time.deltaTime;
             isGrounded = false;
         }
     }

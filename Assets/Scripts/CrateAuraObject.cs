@@ -47,7 +47,7 @@ public class CrateAuraObject : MonoBehaviour
         if ((hitLeft.collider != null && Mathf.Abs(hitLeft.normal.x) > 0.1f && Mathf.Abs(hitLeft.normal.x) < 0.9f) ||
             (hitRight.collider != null && Mathf.Abs(hitRight.normal.x) > 0.1f && Mathf.Abs(hitRight.normal.x) < 0.9f) && isGrounded)
         {
-            Debug.Log("SlopeDetected");
+            //Debug.Log("SlopeDetected");
 
             rb.sharedMaterial = lowFriction;
 
