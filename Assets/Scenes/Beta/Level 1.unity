@@ -48754,6 +48754,7 @@ MonoBehaviour:
   isGroundCheckerLeft: {fileID: 555541329}
   isGroundCheckerRight: {fileID: 1176144240}
   checkGroundRadius: 0
+  remberGroundedFor: 0.05
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
