@@ -16,7 +16,7 @@ public class DoorControl : MonoBehaviour
             AudioSource audioSource = GetComponent<AudioSource>();  //door open sfx
             if (played == false)
             {
-                audioSource.PlayOneShot(audioSource.clip);
+                audioSource.PlayOneShot(audioSource.clip, 2f);
                 played = true;
             }
 
@@ -37,7 +37,7 @@ public class DoorControl : MonoBehaviour
             if (played == false)
             {
                 audioSource.pitch = Random.Range(0.5f, 1f);
-                audioSource.PlayOneShot(audioSource.clip);
+                audioSource.PlayOneShot(audioSource.clip, 2f);
                 played = true;
             }
 

@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 770d10b458b96af459875f2d03f787e2, type: 2}
   m_sharedMaterial: {fileID: 3715069028710277469, guid: 770d10b458b96af459875f2d03f787e2, type: 2}
@@ -2732,10 +2732,10 @@ AudioSource:
   m_GameObject: {fileID: 445808424}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 6f0681356ab9b344eb9fceea7cdd6629, type: 2}
   m_audioClip: {fileID: 8300000, guid: 86e9825e2bc1fd547895cd4a0a01eeab, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3575,7 +3575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &590470644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3704,7 +3704,7 @@ MonoBehaviour:
   - Walk through here to get to the next level.  Heads up, its not very finsished
     though.
   - GOOD LUCK!
-  speed: 0.001
+  speed: 0.05
   Activator: {fileID: 642973823}
   TextBox: {fileID: 731983799}
 --- !u!212 &642973826
@@ -3888,7 +3888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2228aea51e8bca4e9c60bf22b3cee57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 875304409}
   pauseMenu: {fileID: 590470643}
   optionsMenu: {fileID: 8097827}
   pauseFirstButton: {fileID: 1290686168}
@@ -19763,7 +19762,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 75331769
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -27889,7 +27888,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 75331769
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -54370,7 +54369,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 166.15002, y: 50}
+  m_SizeDelta: {x: 200.02, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1940942321
 Animator:

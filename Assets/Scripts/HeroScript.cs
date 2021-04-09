@@ -109,7 +109,7 @@ public class HeroScript : MonoBehaviour
             if (!audioSourceWalking.isPlaying && isGrounded)
             {
                 audioSourceWalking.pitch = Random.Range(2f, 2.5f);
-                float randomVolume = Random.Range(1.5f, 2f);
+                float randomVolume = Random.Range(1f, 1.5f);
 
                 audioSourceWalking.PlayOneShot(audioSourceWalking.clip, randomVolume);
             }
@@ -385,6 +385,8 @@ public class HeroScript : MonoBehaviour
         animator.SetBool("JumpDown", false);
         animator.SetFloat("Speed", 0.0f);
 
+        moveBy = 0;
+        rb.velocity = Vector2.zero;
 
         isPaused = toPause;
     }

@@ -43,6 +43,7 @@ public class DialogueText : MonoBehaviour
 
                 if (isPaused == true)
                 {
+                    
                     TextBox.enabled = false;
                     Text.enabled = false;
                     while(isPaused == true)
@@ -50,8 +51,10 @@ public class DialogueText : MonoBehaviour
                         isPaused = pauseMenu.GetComponent<PauseMenu>().IsPaused();
                         yield return null;
                     }
+                    hero.GetComponent<HeroScript>().DialogPause(true);
                     TextBox.enabled = true;
                     Text.enabled = true;
+                    
                 }
 
                 Text.text += letter;//display text
