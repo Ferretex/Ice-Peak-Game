@@ -92,6 +92,11 @@ public class HeroScript : MonoBehaviour
             if (auraActivated)
                 Aura();
         }
+
+        if(Application.loadedLevelName != "Level 1")
+        {
+            hasArtifact = true;
+        }
     }
 
     void Move()         //Basic Movement
@@ -202,7 +207,7 @@ public class HeroScript : MonoBehaviour
             }
 
             
-            Debug.Log("Grounded Time: " + groundedTime);
+            //Debug.Log("Grounded Time: " + groundedTime);
 
             if (jumpTimeCounter > 0)     //unitll the counter gets to zero, isJumping is true and the player can hold to determine the height of the jump
             { 
