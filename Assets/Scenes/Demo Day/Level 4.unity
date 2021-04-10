@@ -23903,6 +23903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 497962915}
   - component: {fileID: 497962916}
+  - component: {fileID: 497962917}
   m_Layer: 0
   m_Name: MainMusic
   m_TagString: Untagged
@@ -23918,11 +23919,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497962914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15264.322}
-  m_LocalScale: {x: 122.13547, y: 122.13547, z: 122.13547}
+  m_LocalPosition: {x: -0.3199165, y: -0.32000005, z: 98.9273}
+  m_LocalScale: {x: 0.8315606, y: 0.8315606, z: 0.8315606}
   m_Children: []
-  m_Father: {fileID: 1574948316}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &497962916
 AudioSource:
@@ -24020,6 +24021,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &497962917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497962914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d60479831ffea047bf5524ef52cc83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &536842121
 GameObject:
   m_ObjectHideFlags: 0
@@ -69724,6 +69737,8 @@ MonoBehaviour:
   player: {fileID: 1827055317}
   crates:
   - {fileID: 1877487890}
+  - {fileID: 1277934278}
+  - {fileID: 765757129}
 --- !u!223 &1574948314
 Canvas:
   m_ObjectHideFlags: 0
@@ -69772,7 +69787,6 @@ RectTransform:
   m_Children:
   - {fileID: 730014640}
   - {fileID: 761167761}
-  - {fileID: 497962915}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87545,10 +87559,11 @@ GameObject:
   - component: {fileID: 1827055325}
   - component: {fileID: 1827055324}
   - component: {fileID: 1827055323}
-  - component: {fileID: 1827055322}
   - component: {fileID: 1827055321}
   - component: {fileID: 1827055320}
   - component: {fileID: 1827055319}
+  - component: {fileID: 1827055327}
+  - component: {fileID: 1827055322}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -87776,7 +87791,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827055317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -87802,15 +87817,15 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827055317}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 0.28}
-  m_Direction: 1
+  m_Offset: {x: -0.05, y: 0}
+  m_Size: {x: 0.1, y: 0.28}
+  m_Direction: 0
 --- !u!95 &1827055323
 Animator:
   serializedVersion: 3
@@ -87847,13 +87862,14 @@ MonoBehaviour:
   speed: 2.5
   acceleration: 0.9
   jumpPower: 3.5
-  fallSpeed: -10
+  fallSpeed: -8
   jumpTime: 0.2
   fallMultiplier: 2.5
   lowJumpMultiplier: 1.75
   isGroundCheckerLeft: {fileID: 1713022460}
   isGroundCheckerRight: {fileID: 1021921434}
   checkGroundRadius: 0
+  remberGroundedFor: 0.05
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -87949,6 +87965,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1827055327
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827055317}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05, y: 0}
+  m_Size: {x: 0.1, y: 0.28}
+  m_Direction: 0
 --- !u!1 &1877487885
 GameObject:
   m_ObjectHideFlags: 0
@@ -88340,7 +88372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1961571679
 BoxCollider2D:
   m_ObjectHideFlags: 0

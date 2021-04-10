@@ -22,10 +22,27 @@ public class Button : MonoBehaviour
     void Update()       //Updates call function in the door script
     {
         if (isButtonDown)
-
-            door.GetComponent<DoorControl>().OnButtonDown();
+        {
+            if (door.name.Contains("Door"))
+            {
+                door.GetComponent<DoorControl>().OnButtonDown();
+            }
+            else
+            {
+            door.GetComponent<SlideWallControl>().OnButtonDown();
+            }
+        }
         else
-            door.GetComponent<DoorControl>().OnButtonUp();
+        {
+            if (door.name.Contains("Door"))
+            {
+                door.GetComponent<DoorControl>().OnButtonUp();
+            } else
+            {
+                door.GetComponent<SlideWallControl>().OnButtonUp();    
+            }
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)

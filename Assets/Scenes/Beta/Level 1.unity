@@ -41029,7 +41029,6 @@ RectTransform:
   m_Children:
   - {fileID: 1808793250}
   - {fileID: 491333580}
-  - {fileID: 1575920064}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46509,6 +46508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575920064}
   - component: {fileID: 1575920065}
+  - component: {fileID: 1575920066}
   m_Layer: 0
   m_Name: MainMusic
   m_TagString: Untagged
@@ -46524,11 +46524,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575920063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15264.322}
-  m_LocalScale: {x: 122.13547, y: 122.13547, z: 122.13547}
+  m_LocalPosition: {x: 1.47, y: 0.02, z: 97.11672}
+  m_LocalScale: {x: 0.8170735, y: 0.8170735, z: 0.8170735}
   m_Children: []
-  m_Father: {fileID: 1429398908}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1575920065
 AudioSource:
@@ -46626,6 +46626,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1575920066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575920063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d60479831ffea047bf5524ef52cc83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1680735405
 GameObject:
   m_ObjectHideFlags: 0
@@ -48466,10 +48478,11 @@ GameObject:
   - component: {fileID: 2090055699}
   - component: {fileID: 2090055698}
   - component: {fileID: 2090055697}
-  - component: {fileID: 2090055696}
   - component: {fileID: 2090055695}
   - component: {fileID: 2090055694}
   - component: {fileID: 2090055693}
+  - component: {fileID: 2090055702}
+  - component: {fileID: 2090055696}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -48676,7 +48689,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090055692}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -48702,15 +48715,15 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090055692}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.24, y: 0.28}
-  m_Direction: 1
+  m_Offset: {x: 0.05, y: 0}
+  m_Size: {x: 0.1, y: 0.28}
+  m_Direction: 0
 --- !u!95 &2090055697
 Animator:
   serializedVersion: 3
@@ -48747,7 +48760,7 @@ MonoBehaviour:
   speed: 2.5
   acceleration: 0.9
   jumpPower: 3.5
-  fallSpeed: -10
+  fallSpeed: -8
   jumpTime: 0.2
   fallMultiplier: 2.5
   lowJumpMultiplier: 1.75
@@ -48871,6 +48884,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2090055702
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090055692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05, y: 0}
+  m_Size: {x: 0.1, y: 0.28}
+  m_Direction: 0
 --- !u!1 &2135952349
 GameObject:
   m_ObjectHideFlags: 0
