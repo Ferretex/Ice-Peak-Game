@@ -367,6 +367,8 @@ public class HeroScript : MonoBehaviour
                     case "IceSpikesMelted": col.GetComponent<IceSpikeMelted>().OnIceSpikesMeltedEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
 
                     case "IceCrystal": col.GetComponent<IceCrystalScript>().OnIceCrystalEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
+
+                    case "IceFloor": col.GetComponent<IceFloorScript>().OnIceFloorEnterAura(auraToggle, isBottomChecker, isHeadChecker, isLeftChecker, isRightChecker); break;
                 }
 
             }

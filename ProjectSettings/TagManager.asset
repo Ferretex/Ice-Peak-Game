@@ -13,6 +13,7 @@ TagManager:
   - WarpZone
   - IceCrystal
   - Water
+  - IceFloor
   layers:
   - Default
   - TransparentFX
