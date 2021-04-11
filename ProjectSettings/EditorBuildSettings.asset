@@ -21,9 +21,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo Day/Level 3.unity
     guid: 39ca85f1d1cee8b4895c2e21464ccc03
   - enabled: 1
-    path: Assets/Scenes/Lexi Scene(upstream).unity
-    guid: c912026fbf803a74b8919bf8a7dbdff2
+    path: Assets/Scenes/Demo Day/Level 4.unity
+    guid: 97b035945beef6c4b94f6a13b7161b97
+  - enabled: 1
+    path: Assets/Scenes/Demo Day/Level 5.unity
+    guid: 35c6decddd491124a9477c2978cd1e10
+  - enabled: 1
+    path: Assets/Scenes/Secret Level.unity
+    guid: 2a813f24143244049a6d4402ce120264
   - enabled: 0
     path: Assets/Scenes/Thomas Scene.unity
     guid: b23c5ed7eb904a845ae123a68b2c9402
+  - enabled: 0
+    path: Assets/Scenes/Lexi Scene(upstream).unity
+    guid: c912026fbf803a74b8919bf8a7dbdff2
   m_configObjects: {}
