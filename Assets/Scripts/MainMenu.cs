@@ -7,13 +7,15 @@ using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
 
-    public GameObject mainMenu, galleryMenu, optionsMenu, levelSelectMenu;
+    public GameObject mainMenu, galleryMenu, optionsMenu, levelSelectMenu, galleryStorage;
 
     public GameObject mainMenuFirstButton, galleryMenuFirstButton, optionsMenuFirstButton, levelSelectMenuFirstButton;
 
     public Canvas canvasScalar;
 
     private Vector2 res;
+
+    public GameObject notUnlocked;
 
     void Start()
     {
@@ -58,6 +60,10 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void LoadLevel1()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -81,6 +87,29 @@ public class MainMenu : MonoBehaviour
     public void LoadLevel5()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
+    }
+
+    IEnumerator NotUnlockedMessage()
+    {
+        notUnlocked.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
+        notUnlocked.SetActive(false);
+    }
+    public void LoadSecretLevel()
+    {
+        if(galleryStorage.GetComponent<GalleryStorage>().SecretLevelUnlocked() == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
+        } else
+        {
+            StartCoroutine(NotUnlockedMessage());
+        }
+        
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 6);
     }
 
     public void QuitGame ()

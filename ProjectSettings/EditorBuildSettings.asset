@@ -26,12 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo Day/Level 5.unity
     guid: 35c6decddd491124a9477c2978cd1e10
-  - enabled: 0
-    path: Assets/Scenes/Secret Level.unity
-    guid: 2a813f24143244049a6d4402ce120264
   - enabled: 1
     path: Assets/Scenes/Demo Day/End.unity
     guid: f18a672a2381d50479b65e30000109c0
+  - enabled: 1
+    path: Assets/Scenes/Secret Level.unity
+    guid: 2a813f24143244049a6d4402ce120264
   - enabled: 0
     path: Assets/Scenes/Thomas Scene.unity
     guid: b23c5ed7eb904a845ae123a68b2c9402

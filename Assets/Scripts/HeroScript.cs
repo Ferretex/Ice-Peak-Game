@@ -259,7 +259,7 @@ public class HeroScript : MonoBehaviour
             animator.SetBool("JumpUp", false);
             animator.SetBool("JumpDown", true);
 
-            if(rb.velocity.y <= fallSpeed)
+            if(rb.velocity.y < fallSpeed)
             {
                 rb.velocity = new Vector2(rb.velocity.x, fallSpeed);
             }

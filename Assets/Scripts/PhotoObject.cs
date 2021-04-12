@@ -12,6 +12,8 @@ public class PhotoObject : MonoBehaviour
 
     public SpriteRenderer ActivatorSprite;
 
+    public AudioClip photoPickup;
+
 
     float x = 0;
     float pos;
@@ -31,6 +33,10 @@ public class PhotoObject : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            AudioSource audioSource = GetComponent<AudioSource>();
+
+            audioSource.PlayOneShot(photoPickup, 1.5f);
+
             galleryStorage.GetComponent<GalleryStorage>().UnlockPhoto(photoNum);
 
             ActivatorCol.enabled = false;
