@@ -15,22 +15,23 @@ public class DialogueText : MonoBehaviour
     public Collider2D Activator;
     public Image TextBox;
 
+    bool DialogActivated = false;
+
     bool isPaused = false;
     void Start()
     {
         index = 0;
         TextBox.enabled = false;
-    }
-    void Update()
-    {
-
-
+        Text.enabled = false;
     }
      IEnumerator Type()
    {
         Debug.Log("Dialog Start");
 
+        Activator.enabled = false; //prevents the box from being activated twice
+
         TextBox.enabled = true;
+        Text.enabled = true;
 
         hero.GetComponent<HeroScript>().DialogPause(true);
 
@@ -70,15 +71,17 @@ public class DialogueText : MonoBehaviour
         }
         hero.GetComponent<HeroScript>().DialogPause(false);
 
-        Activator.enabled = false; //prevents the box from being activated twice
+        
         TextBox.enabled = false;
+        Text.enabled = false;
 
         Debug.Log("Dialog End");
     }
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && DialogActivated == false)
         {
+            Activator.enabled = false;
             
             StartCoroutine(Type());
 

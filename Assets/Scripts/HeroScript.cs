@@ -64,6 +64,8 @@ public class HeroScript : MonoBehaviour
 
     bool isPaused = false;
 
+    bool moveType = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,20 +79,31 @@ public class HeroScript : MonoBehaviour
     {
         if(isPaused == false)
         {
-            Move();                                 //Call all functions from the update function
-            SlopeCheck();
+            if(moveType == false)
+            {
+                rb.gravityScale = 1;
+                Move();                                 //Call all functions from the update function
+                SlopeCheck();
 
-            Jump();
-            BetterJump();
+                Jump();
+                BetterJump();
 
-            CheckIfGrounded();
-            CheckIfWater();
+                CheckIfGrounded();
+                CheckIfWater();
+            }
+            else
+            {
+                rb.gravityScale = 0;
+                DebugMove();
+            }
 
             if (hasArtifact)
                 activateAura();
 
             if (auraActivated)
                 Aura();
+
+            ChangeMoveType();
         }
 
         if(Application.loadedLevelName != "Level 1")
@@ -164,28 +177,33 @@ public class HeroScript : MonoBehaviour
         RaycastHit2D hitBottomRight = Physics2D.Raycast(transform.position, new Vector2(1,-1), .5f, groundLayer);
         RaycastHit2D hitTopLeft = Physics2D.Raycast(transform.position, new Vector2(-1, 1), .5f, groundLayer);
         RaycastHit2D hitTopRight = Physics2D.Raycast(transform.position, new Vector2(1, 1), .5f, groundLayer);
+        RaycastHit2D hitBottom = Physics2D.Raycast(transform.position, new Vector2(0, -1), .5f, groundLayer);
 
         //Debug.Log("is groudned: " + isGrounded);
 
-        if ((hitBottomLeft.collider != null && Mathf.Abs(hitBottomLeft.normal.x) > 0.1f) || (hitBottomRight.collider != null && Mathf.Abs(hitBottomRight.normal.x ) > 0.1f) && !inWater)  //If it his a collider and not in water
+        if ((hitBottomLeft.collider != null && Mathf.Abs(hitBottomLeft.normal.x) > 0.1f) || (hitBottomRight.collider != null && Mathf.Abs(hitBottomRight.normal.x ) > 0.1f) ||
+            (hitBottom.collider != null && Mathf.Abs(hitBottom.normal.x) > 0.1f) && !inWater)  //If it his a collider and not in water
         {
             //Debug.Log("SlopeDetected");
-
+            acceleration = 1;
             onSlope = true;
             rb.sharedMaterial = noFriction;
         } 
         else if ((hitTopLeft.collider != null && Mathf.Abs(hitTopLeft.normal.x) > 0.1f) || (hitTopRight.collider != null && Mathf.Abs(hitTopRight.normal.x) > 0.1f) && !inWater)
         {
+            acceleration = 0.9f;
             onSlope = false;
             rb.sharedMaterial = noFriction;
         }
         else if(hitBottomLeft.collider == null && hitTopLeft.collider == null && hitTopRight.collider == null && hitBottomRight.collider == null)
         {
+            acceleration = 0.9f;
             onSlope = false;
             rb.sharedMaterial = noFriction;
         }
         else
         {
+            acceleration = 0.9f;
             onSlope = false;
             rb.sharedMaterial = default;
         }
@@ -376,6 +394,27 @@ public class HeroScript : MonoBehaviour
             
     }
 
+    void ChangeMoveType()
+    {
+        if (Input.GetKey(KeyCode.G))
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                moveType = !moveType;
+            }
+        }
+    }
+
+    void DebugMove()
+    {
+        float x = Input.GetAxisRaw("Horizontal");       //Checks for WASD and Arrow key inputs
+        float y = Input.GetAxisRaw("Vertical");
+        if (x == 1 || x == -1 || y == 1 || y == -1)
+        {
+            rb.transform.Translate(x/100, y/100, 0);
+        }
+    }
+
     public void MoveRespawnPoint()      //Moves respwan point to last safe location
     {
         respawnPoint.position = new Vector2(rb.position.x, rb.position.y);     
@@ -402,6 +441,7 @@ public class HeroScript : MonoBehaviour
 
         isPaused = toPause;
     }
+
 }
 
 
