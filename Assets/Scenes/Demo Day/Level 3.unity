@@ -64985,7 +64985,7 @@ MonoBehaviour:
   Sections:
   - These broken structures are interesting...
   - I should keep exploring to find out more.
-  speed: 0.05
+  speed: 0.03
   Activator: {fileID: 1184226156}
   TextBox: {fileID: 199299155}
 --- !u!212 &1184226158
@@ -71620,7 +71620,7 @@ MonoBehaviour:
   Sections:
   - 'Hm, what''s this funny looking dude doing here. '
   - I wonder if this was created by the dead civilization.
-  speed: 0.05
+  speed: 0.03
   Activator: {fileID: 1692129110}
   TextBox: {fileID: 199299155}
 --- !u!212 &1692129112
