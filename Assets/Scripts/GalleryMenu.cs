@@ -19,6 +19,8 @@ public class GalleryMenu : MonoBehaviour
 
     public Image[] pictures;
 
+    public Sprite[] savedPictures;
+
     bool[] collected;
 
     void Start()
@@ -34,6 +36,12 @@ public class GalleryMenu : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void PhotoCollected(int photoID)
+    {
+        Debug.Log("get photo");
+        pictures[photoID].sprite = savedPictures[photoID]; 
     }
 
     public void OpenSelectedImage()

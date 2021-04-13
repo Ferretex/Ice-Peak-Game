@@ -6,7 +6,7 @@ public class PhotoObject : MonoBehaviour
 {
     public int photoNum;
 
-    public GameObject galleryStorage;
+    public GameObject galleryStorage, gallery;
 
     public Collider2D ActivatorCol;
 
@@ -38,6 +38,7 @@ public class PhotoObject : MonoBehaviour
             audioSource.PlayOneShot(photoPickup, 1.5f);
 
             galleryStorage.GetComponent<GalleryStorage>().UnlockPhoto(photoNum);
+            gallery.GetComponent<GalleryMenu>().PhotoCollected(photoNum);
 
             ActivatorCol.enabled = false;
             ActivatorSprite.enabled = false;

@@ -8,9 +8,9 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
 
-    public GameObject pauseMenu, optionsMenu;
+    public GameObject pauseMenu, optionsMenu, galleryMenu;
 
-    public GameObject pauseFirstButton, optionsMenuFirstButton;
+    public GameObject pauseFirstButton, optionsMenuFirstButton, galleryMenuFirstButton;
 
     public Canvas canvasScalar;
 
@@ -76,6 +76,7 @@ public class PauseMenu : MonoBehaviour
     {
         CloseMainMenu();
         CloseOptions();
+        CloseGallery();
         Time.timeScale = 1f;
         isPaused = false;
         player.GetComponent<HeroScript>().PausePlayer(false);
@@ -123,6 +124,21 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenGallery()
+    {
+        galleryMenu.SetActive(true);
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected game object
+        EventSystem.current.SetSelectedGameObject(galleryMenuFirstButton);
+    }
+
+    public void CloseGallery()
+    {
+        galleryMenu.SetActive(false);
     }
 
     public void ResetLevel()
