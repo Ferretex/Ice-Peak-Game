@@ -377,8 +377,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Created By \n\n - Thomas Vanderwyst\n - Lexi Hulbert\n - Fred Gauthier\n
-    - Sara Ahmed"
+  m_text: "Game Created By \n\n- Thomas Vanderwyst\n- Lexi Hulbert\n- Fred Gauthier\n-
+    Sara Ahmed"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 770d10b458b96af459875f2d03f787e2, type: 2}
   m_sharedMaterial: {fileID: 3715069028710277469, guid: 770d10b458b96af459875f2d03f787e2, type: 2}
