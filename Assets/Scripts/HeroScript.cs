@@ -12,6 +12,8 @@ public class HeroScript : MonoBehaviour
     public PhysicsMaterial2D highFriction;
 
 
+
+
     public float speed;             //Movement Variables
     public float acceleration;
     float moveBy = 0;
@@ -46,6 +48,7 @@ public class HeroScript : MonoBehaviour
     public float auraRadius;
     Collider2D[] results;
     public SpriteRenderer auraVisual;
+    public Sprite fireAura, ColdAura;
 
     public Transform isBottomChecker;
     public Transform isHeadChecker;
@@ -329,8 +332,8 @@ public class HeroScript : MonoBehaviour
             auraActivated = true;
             auraToggle = false;
 
-            auraVisual.color = new Color(0f, 1f, 1f, 0.5f);
-
+            auraVisual.color = new Color(1f, 1f, 1f, 0.75f);
+            auraVisual.sprite = ColdAura;
             
                 
 
@@ -345,11 +348,11 @@ public class HeroScript : MonoBehaviour
             auraActivated = true;
             auraToggle = true;
 
-            auraVisual.color = new Color(1f, 0.25f, 0f, 0.5f);
+            auraVisual.color = new Color(1f, 1f, 1f, 0.75f);
+            auraVisual.sprite = fireAura;
 
 
-
-            } else if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.R))
+        } else if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.R))
         {
             auraActivated = false;
 
@@ -363,7 +366,7 @@ public class HeroScript : MonoBehaviour
         Physics2D.OverlapCircleNonAlloc(auraCircle.position, auraRadius, results);      //gets all colliders in aura radius
 
 
-        auraVisual.transform.Rotate(new Vector3(0, 0, -0.2f));      //Spins aura
+        auraVisual.transform.Rotate(new Vector3(0, 0, -50 * Time.deltaTime));      //Spins aura
         
         
         foreach (Collider2D col in results)     //For every collider detected

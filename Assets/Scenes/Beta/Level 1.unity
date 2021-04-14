@@ -62678,6 +62678,8 @@ MonoBehaviour:
   auraCircle: {fileID: 888530591}
   auraRadius: 0.5
   auraVisual: {fileID: 888530590}
+  fireAura: {fileID: 21300000, guid: f92b27b8cb8b222438937e1ecc2cef99, type: 3}
+  ColdAura: {fileID: 21300000, guid: 8dfbd7497c069424b8417ad94e048664, type: 3}
   isBottomChecker: {fileID: 1889744126}
   isHeadChecker: {fileID: 86786416}
   isLeftChecker: {fileID: 1997979702}
