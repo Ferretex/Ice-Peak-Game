@@ -98321,7 +98321,7 @@ MonoBehaviour:
   noFriction: {fileID: 6200000, guid: acfe226abeda54b419f2fcbd8f782669, type: 2}
   highFriction: {fileID: 6200000, guid: 34df67d5ff78b9b4e83ae772f04156fc, type: 2}
   speed: 2.5
-  acceleration: 0.9
+  realAcceleration: 0.5
   jumpPower: 3.6
   fallSpeed: -8
   jumpTime: 0.2

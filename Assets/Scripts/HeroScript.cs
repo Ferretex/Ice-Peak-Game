@@ -15,8 +15,9 @@ public class HeroScript : MonoBehaviour
 
 
     public float speed;             //Movement Variables
-    public float acceleration;
-    float moveBy = 0;
+    public float realAcceleration;
+    float acceleration = 1;
+    float moveBy = 0, moveByY = 0;
     private bool facingRight = true;
 
     public float jumpPower, fallSpeed;         //Jump Variables
@@ -88,9 +89,16 @@ public class HeroScript : MonoBehaviour
                 Move();                                 //Call all functions from the update function
                 SlopeCheck();
 
-                Jump();
-                BetterJump();
-
+                if (inWater == false)
+                {
+                    Jump();
+                    BetterJump();
+                }
+                else
+                {
+                    WaterMove();
+                }
+                
                 CheckIfGrounded();
                 CheckIfWater();
             }
@@ -115,6 +123,35 @@ public class HeroScript : MonoBehaviour
         }
     }
 
+    void WaterMove()
+    {
+        float y = Input.GetAxisRaw("Vertical");
+        if (y == 1 || y == -1)
+        {
+            moveByY = rb.velocity.y;
+            if (Mathf.Abs(moveByY) < speed)              //Acceleration for normal movement
+                moveByY += y * acceleration * Time.deltaTime * 50;
+
+            rb.velocity = new Vector2(rb.velocity.x, moveByY);
+        }
+        else
+        {
+            moveByY = 0;
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            animator.SetBool("JumpUp", false);
+            animator.SetBool("JumpDown", true);
+
+        }
+        else if (rb.velocity.y > 0)
+        {
+            animator.SetBool("JumpUp", true);
+            animator.SetBool("JumpDown", false);
+        }
+    }
+
     void Move()         //Basic Movement
     {
         float x = Input.GetAxisRaw("Horizontal");       //Checks for WASD and Arrow key inputs
@@ -123,9 +160,21 @@ public class HeroScript : MonoBehaviour
             moveBy = rb.velocity.x;
 
             if (Mathf.Abs(moveBy) < speed)              //Acceleration for normal movement
-                moveBy += x * acceleration;
-            if (Mathf.Abs(moveBy) > speed)              //If the player hhas suyrpassed max speed by sliding down a slope, it sustains the speed but never increases
-                moveBy = x * Mathf.Abs(rb.velocity.x);
+                moveBy += x * acceleration * Time.deltaTime * 50;
+            if (moveBy > speed)
+            {
+                if(x == 1)
+                    moveBy = x * Mathf.Abs(rb.velocity.x);
+                else
+                    moveBy += x * acceleration * Time.deltaTime * 50;
+            }
+            else if(-moveBy > speed)
+            {
+                if (x == -1)
+                    moveBy = x * Mathf.Abs(rb.velocity.x);
+                else
+                    moveBy += x * acceleration * Time.deltaTime * 50;
+            }
 
             rb.velocity = new Vector2(moveBy, rb.velocity.y);
 
@@ -194,19 +243,19 @@ public class HeroScript : MonoBehaviour
         } 
         else if ((hitTopLeft.collider != null && Mathf.Abs(hitTopLeft.normal.x) > 0.1f) || (hitTopRight.collider != null && Mathf.Abs(hitTopRight.normal.x) > 0.1f) && !inWater)
         {
-            acceleration = 0.9f;
+            acceleration = realAcceleration;
             onSlope = false;
             rb.sharedMaterial = noFriction;
         }
         else if(hitBottomLeft.collider == null && hitTopLeft.collider == null && hitTopRight.collider == null && hitBottomRight.collider == null)
         {
-            acceleration = 0.9f;
+            acceleration = realAcceleration;
             onSlope = false;
             rb.sharedMaterial = noFriction;
         }
         else
         {
-            acceleration = 0.9f;
+            acceleration = realAcceleration;
             onSlope = false;
             rb.sharedMaterial = default;
         }

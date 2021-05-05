@@ -41,8 +41,8 @@ public class CrateAuraObject : MonoBehaviour
 
     void SlopeCheck()
     {
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, new Vector2(-1, -1), .2f, groundLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, new Vector2(1, -1), .2f, groundLayer);
+        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, new Vector2(-1, -1), .64f, groundLayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, new Vector2(1, -1), .64f, groundLayer);
 
         if ((hitLeft.collider != null && Mathf.Abs(hitLeft.normal.x) > 0.1f && Mathf.Abs(hitLeft.normal.x) < 0.9f) ||
             (hitRight.collider != null && Mathf.Abs(hitRight.normal.x) > 0.1f && Mathf.Abs(hitRight.normal.x) < 0.9f) && isGrounded)
