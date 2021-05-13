@@ -19,7 +19,9 @@ public class KillPlayer : MonoBehaviour
     {
         if (col.transform.CompareTag("Player"))
         {
+            DeathCounter.DeathCount += 1;
             StartCoroutine(Respawn(col));
+
 
         }
     }
